@@ -1,0 +1,37 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Ferramentas
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Dados (baixados via `make data`) e resultados gerados
+data/input/*
+!data/input/.gitkeep
+data/output/*
+!data/output/.gitkeep
+
+# Logs de execução
+logs/*
+!logs/.gitkeep
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store

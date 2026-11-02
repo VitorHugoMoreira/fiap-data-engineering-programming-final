@@ -1,0 +1,10 @@
+include README.md
+include requirements.txt
+include pyproject.toml
+include Makefile
+include config/settings.yaml
+recursive-include tests *.py
+recursive-include docs *.md
+prune data
+prune logs
+prune docs/evidencias

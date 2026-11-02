@@ -1,0 +1,57 @@
+# =============================================================================
+# Configuração externa da aplicação (Twelve-Factor App — Princípio III)
+# Caminhos relativos são resolvidos a partir da RAIZ DO PROJETO (pasta que contém
+# config/), independentemente do diretório de execução. URIs (s3a://...) são mantidas.
+# =============================================================================
+environment: "local"
+
+spark:
+  app_name: "fiap-relatorio-pedidos-recusados-legitimos"
+  master: null                # null: usa o --master do spark-submit (padrão do Spark: local[*])
+  log_level: "WARN"
+  options:
+    spark.sql.session.timeZone: "UTC"     # fuso fixo da sessão (datas são TIMESTAMP_NTZ)
+    spark.sql.shuffle.partitions: "8"
+    spark.sql.ansi.enabled: "true"
+    spark.ui.showConsoleProgress: "false"
+
+sources:
+  pedidos:
+    path: "./data/input/datasets-csv-pedidos/data/pedidos/"
+    file_pattern: "*.csv.gz"
+    format: "csv"
+    compression: "gzip"
+    header: true
+    enforce_schema: false     # valida o cabeçalho contra o schema: colunas fora de ordem = erro
+    sep: ";"
+    encoding: "UTF-8"
+    timestamp_format: "yyyy-MM-dd'T'HH:mm:ss"
+    mode: "PERMISSIVE"
+  pagamentos:
+    path: "./data/input/dataset-json-pagamentos/data/pagamentos/"
+    file_pattern: "*.json.gz"
+    format: "json"
+    compression: "gzip"
+    timestamp_format: "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
+    mode: "PERMISSIVE"
+
+output:
+  path: "./data/output/relatorio_pedidos_recusados_legitimos_2025"
+  format: "parquet"
+  mode: "overwrite"
+  compression: "snappy"
+  num_files: 1                # relatório pequeno: um único arquivo ordenado
+
+business:
+  reference_year: 2025        # pedidos criados entre 01/01/2025 e 31/12/2025
+  payment_status: false       # status=false  -> pagamento recusado
+  fraud_flag: false           # fraude=false  -> transação legítima
+
+pipeline:
+  cache_inputs: true          # evita reler os .gz a cada ação de contagem/validação
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"   # formato do exemplo do enunciado
+  datefmt: "%Y-%m-%d %H:%M:%S"
+  file: "./logs/pipeline.log"
