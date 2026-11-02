@@ -1,7 +1,7 @@
 # Relatório de Pedidos Recusados e Legítimos — PySpark
 
 > **Trabalho Final — Data Engineering Programming (FIAP)**
-> Repositório: `https://github.com/SEU-USUARIO/fiap-data-engineering-programming-final` *(substituir pelo link real após a publicação)*
+> Repositório: https://github.com/VitorHugoMoreira/fiap-data-engineering-programming-final
 
 Aplicação PySpark orientada a objetos que gera, em **Parquet**, o relatório de pedidos de **2025** cujo pagamento foi **recusado** (`status = false`) e cuja avaliação de fraude os classificou como **legítimos** (`fraude = false`).
 
@@ -10,7 +10,7 @@ Aplicação PySpark orientada a objetos que gera, em **Parquet**, o relatório d
 ## Início rápido
 
 ```bash
-git clone https://github.com/SEU-USUARIO/fiap-data-engineering-programming-final.git
+git clone https://github.com/VitorHugoMoreira/fiap-data-engineering-programming-final.git
 cd fiap-data-engineering-programming-final
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
@@ -264,7 +264,7 @@ Os testes usam dados pequenos e controlados, schemas explícitos, SparkSession l
 ## 19. Instalação
 
 ```bash
-git clone https://github.com/SEU-USUARIO/fiap-data-engineering-programming-final.git
+git clone https://github.com/VitorHugoMoreira/fiap-data-engineering-programming-final.git
 cd fiap-data-engineering-programming-final
 python3 -m venv .venv
 source .venv/bin/activate
