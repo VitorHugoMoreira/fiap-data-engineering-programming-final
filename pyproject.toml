@@ -9,9 +9,9 @@ description = "Relatório PySpark de pedidos recusados e legítimos (FIAP)."
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-    { name = "Vitor Hugo Moreira Luiz da Silva", email = "" },
-    { name = "Vinicius Lima Baldin" },
-    { name = "Felippe Machoski de Souza" }
+    { name = "Vitor Hugo Moreira Luiz da Silva — RM374115" },
+    { name = "Vinicius Lima Baldin — RM374277" },
+    { name = "Felippe Machoski de Souza — RM374591" }
 ]
 keywords = ["pyspark", "data-engineering", "fiap", "parquet"]
 classifiers = [
