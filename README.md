@@ -29,7 +29,9 @@ python src/main.py # gera data/output/relatorio_pedidos_recusados_legitimos_2025
 | Disciplina | Data Engineering Programming |
 | Professor | Marcelo Barbosa Pinto |
 | Material de apoio | https://github.com/infobarbosa/pyspark-poo |
-| Integrantes | *Vitor Hugo Moreira Luiz da Silva — RM374115* / *Vinicius Lima Baldin - RM374277* / *Felippe Machoski de Souza - RM374591* |
+| Integrantes | *Vitor Hugo Moreira Luiz da Silva — RM374115*  
+*Vinicius Lima Baldin - RM374277*  
+*Felippe Machoski de Souza - RM374591* |
 
 O projeto segue a evolução apresentada em aula (passos 1 a 14 do `pyspark-poo`): schemas explícitos, configuração externa em YAML, `SparkSessionManager`, pacote de I/O, lógica de negócio isolada, injeção de dependências com `main.py` como *Aggregation Root*, logging, tratamento de erros com exceções de domínio, empacotamento (`pyproject.toml`) e testes com `pytest`.
 
